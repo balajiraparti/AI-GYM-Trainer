@@ -1,0 +1,681 @@
+/* ============================================================
+   STREAMLIT DESIGN SYSTEM
+   ============================================================ */
+
+:root {
+    --st-bg: #0b0f14;
+    --st-surface: #111820;
+    --st-surface-2: #151d27;
+
+    --st-text: #ffffff;
+    --st-text-secondary: #a7b0bc;
+    --st-text-muted: #697586;
+
+    --st-border: #293542;
+    --st-border-hover: #526173;
+
+    --st-radius: 12px;
+    --st-radius-sm: 8px;
+
+    --st-spacing-xs: 4px;
+    --st-spacing-sm: 8px;
+    --st-spacing-md: 16px;
+    --st-spacing-lg: 24px;
+    --st-spacing-xl: 32px;
+    --st-spacing-2xl: 48px;
+}
+
+
+/* ============================================================
+   GLOBAL STREAMLIT APP
+   ============================================================ */
+
+.stApp {
+    background: var(--st-bg) !important;
+    color: var(--st-text) !important;
+
+    font-family: "Uni Sans Heavy Caps", sans-serif !important;
+}
+
+
+/* Streamlit main container */
+
+.stAppViewContainer {
+    background: var(--st-bg) !important;
+}
+
+
+/* Main content */
+
+.main {
+    background: var(--st-bg) !important;
+}
+
+
+/* Main block */
+
+.block-container {
+    max-width: 1050px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    padding-top: 32px !important;
+    padding-bottom: 40px !important;
+
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+}
+
+/* ============================================================
+   GLOBAL STREAMLIT TYPOGRAPHY
+   ============================================================ */
+
+.stApp,
+.stApp p,
+.stApp label,
+.stApp span,
+.stApp div,
+.stApp input,
+.stApp textarea,
+.stApp button {
+    font-family: "Uni Sans Heavy Caps", sans-serif !important;
+    font-weight: 900 !important;
+}
+
+
+/* ============================================================
+   STREAMLIT TITLE
+   ============================================================ */
+
+.stApp h1 {
+    font-size: 48px !important;
+    line-height: 1.05 !important;
+
+    letter-spacing: -1.5px !important;
+
+    color: var(--st-text) !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+}
+
+
+/* ============================================================
+   STREAMLIT HEADINGS
+   ============================================================ */
+
+.stApp h2 {
+    font-size: 36px !important;
+    line-height: 1.1 !important;
+
+    letter-spacing: -1px !important;
+
+    color: var(--st-text) !important;
+
+    margin-top: 32px !important;
+    margin-bottom: 16px !important;
+}
+
+
+.stApp h3 {
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+
+    color: var(--st-text) !important;
+
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+}
+
+
+.stApp h4 {
+    font-size: 20px !important;
+
+    color: var(--st-text) !important;
+}
+
+
+/* ============================================================
+   STREAMLIT MARKDOWN
+   ============================================================ */
+
+[data-testid="stMarkdownContainer"] {
+    color: var(--st-text-secondary) !important;
+}
+
+
+[data-testid="stMarkdownContainer"] p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+
+    color: var(--st-text-secondary) !important;
+
+    margin-bottom: 16px !important;
+}
+
+
+[data-testid="stMarkdownContainer"] strong {
+    color: var(--st-text) !important;
+}
+
+
+/* ============================================================
+   STREAMLIT COLUMNS
+   ============================================================ */
+
+[data-testid="stHorizontalBlock"] {
+    gap: 20px !important;
+}
+
+
+/* ============================================================
+   STREAMLIT VERTICAL CONTAINER
+   ============================================================ */
+
+[data-testid="stVerticalBlock"] {
+    gap: 16px !important;
+}
+
+
+/* ============================================================
+   STREAMLIT BUTTON
+   ============================================================ */
+
+.stButton {
+    width: 100% !important;
+}
+
+
+.stButton > button {
+    width: 100% !important;
+
+    min-height: 44px !important;
+
+    padding: 10px 20px !important;
+
+    border-radius: var(--st-radius-sm) !important;
+
+    background: var(--st-surface-2) !important;
+
+    border: 1px solid var(--st-border) !important;
+
+    color: var(--st-text) !important;
+
+    font-size: 14px !important;
+
+    transition: all 0.15s ease !important;
+}
+
+
+.stButton > button:hover {
+    background: #202b38 !important;
+
+    border-color: var(--st-border-hover) !important;
+
+    color: #ffffff !important;
+}
+
+
+/* Primary button */
+
+.stButton > button[kind="primary"] {
+    background: #ffffff !important;
+
+    color: #0b0f14 !important;
+
+    border-color: #ffffff !important;
+}
+
+
+.stButton > button[kind="primary"]:hover {
+    background: #e5e7eb !important;
+
+    color: #000000 !important;
+}
+
+
+/* ============================================================
+   STREAMLIT TEXT INPUT
+   ============================================================ */
+
+[data-testid="stTextInput"] {
+    width: 100% !important;
+}
+
+
+[data-testid="stTextInput"] label {
+    font-size: 14px !important;
+
+    color: var(--st-text-secondary) !important;
+
+    margin-bottom: 6px !important;
+}
+
+
+[data-testid="stTextInput"] input {
+    min-height: 44px !important;
+
+    padding: 10px 14px !important;
+
+    background: var(--st-surface) !important;
+
+    color: var(--st-text) !important;
+
+    border: 1px solid var(--st-border) !important;
+
+    border-radius: var(--st-radius-sm) !important;
+
+    font-size: 15px !important;
+}
+
+
+[data-testid="stTextInput"] input:focus {
+    border-color: #ffffff !important;
+
+    box-shadow: 0 0 0 1px #ffffff !important;
+}
+
+
+/* ============================================================
+   STREAMLIT TEXT AREA
+   ============================================================ */
+
+[data-testid="stTextArea"] textarea {
+    min-height: 140px !important;
+
+    padding: 14px !important;
+
+    background: var(--st-surface) !important;
+
+    color: var(--st-text) !important;
+
+    border: 1px solid var(--st-border) !important;
+
+    border-radius: var(--st-radius-sm) !important;
+
+    font-size: 15px !important;
+}
+
+
+[data-testid="stTextArea"] textarea:focus {
+    border-color: #ffffff !important;
+
+    box-shadow: 0 0 0 1px #ffffff !important;
+}
+
+
+/* ============================================================
+   STREAMLIT SELECTBOX
+   ============================================================ */
+
+[data-testid="stSelectbox"] label {
+    font-size: 14px !important;
+
+    color: var(--st-text-secondary) !important;
+}
+
+
+[data-testid="stSelectbox"] [data-baseweb="select"] > div {
+    min-height: 44px !important;
+
+    background: var(--st-surface) !important;
+
+    border-color: var(--st-border) !important;
+
+    border-radius: var(--st-radius-sm) !important;
+
+    color: var(--st-text) !important;
+}
+
+
+/* ============================================================
+   STREAMLIT MULTISELECT
+   ============================================================ */
+
+[data-testid="stMultiSelect"] [data-baseweb="select"] {
+    background: var(--st-surface) !important;
+
+    border-color: var(--st-border) !important;
+
+    border-radius: var(--st-radius-sm) !important;
+}
+
+
+/* ============================================================
+   STREAMLIT FILE UPLOADER
+   ============================================================ */
+
+[data-testid="stFileUploader"] section {
+    min-height: 150px !important;
+
+    padding: 32px !important;
+
+    background: var(--st-surface) !important;
+
+    border: 1px dashed var(--st-border-hover) !important;
+
+    border-radius: var(--st-radius) !important;
+}
+
+
+[data-testid="stFileUploader"] section:hover {
+    border-color: #ffffff !important;
+}
+
+
+/* ============================================================
+   STREAMLIT METRIC
+   ============================================================ */
+
+[data-testid="stMetric"] {
+    min-height: 140px !important;
+
+    padding: 24px !important;
+
+    background: var(--st-surface) !important;
+
+    border: 1px solid var(--st-border) !important;
+
+    border-radius: var(--st-radius) !important;
+}
+
+
+[data-testid="stMetricLabel"] {
+    font-size: 13px !important;
+
+    color: var(--st-text-muted) !important;
+}
+
+
+[data-testid="stMetricValue"] {
+    font-size: 32px !important;
+
+    line-height: 1 !important;
+
+    color: var(--st-text) !important;
+}
+
+
+[data-testid="stMetricDelta"] {
+    font-size: 13px !important;
+}
+
+
+/* ============================================================
+   STREAMLIT DATAFRAME
+   ============================================================ */
+
+[data-testid="stDataFrame"] {
+    width: 100% !important;
+
+    border: 1px solid var(--st-border) !important;
+
+    border-radius: var(--st-radius) !important;
+
+    overflow: hidden !important;
+}
+
+
+/* ============================================================
+   STREAMLIT EXPANDER
+   ============================================================ */
+
+[data-testid="stExpander"] {
+    background: var(--st-surface) !important;
+
+    border: 1px solid var(--st-border) !important;
+
+    border-radius: var(--st-radius) !important;
+}
+
+
+[data-testid="stExpander"] summary {
+    padding: 18px !important;
+
+    font-size: 15px !important;
+}
+
+
+/* ============================================================
+   STREAMLIT TABS
+   ============================================================ */
+
+[data-baseweb="tab-list"] {
+    gap: 24px !important;
+
+    background: transparent !important;
+
+    border-bottom: 1px solid var(--st-border) !important;
+}
+
+
+[data-baseweb="tab"] {
+    padding: 14px 8px !important;
+
+    font-size: 14px !important;
+
+    color: var(--st-text-muted) !important;
+}
+
+
+[data-baseweb="tab"][aria-selected="true"] {
+    color: var(--st-text) !important;
+}
+
+
+/* ============================================================
+   STREAMLIT RADIO
+   ============================================================ */
+
+[data-testid="stRadio"] label {
+    font-size: 14px !important;
+
+    color: var(--st-text-secondary) !important;
+}
+
+
+/* ============================================================
+   STREAMLIT CHECKBOX
+   ============================================================ */
+
+[data-testid="stCheckbox"] label {
+    font-size: 14px !important;
+
+    color: var(--st-text-secondary) !important;
+}
+
+
+/* ============================================================
+   STREAMLIT SLIDER
+   ============================================================ */
+
+[data-testid="stSlider"] {
+    padding-top: 8px !important;
+
+    padding-bottom: 8px !important;
+}
+
+
+/* ============================================================
+   STREAMLIT FORM
+   ============================================================ */
+
+[data-testid="stForm"] {
+    padding: 24px !important;
+
+    background: var(--st-surface) !important;
+
+    border: 1px solid var(--st-border) !important;
+
+    border-radius: var(--st-radius) !important;
+}
+
+
+/* ============================================================
+   STREAMLIT ALERTS
+   ============================================================ */
+
+[data-testid="stAlert"] {
+    border-radius: var(--st-radius-sm) !important;
+
+    padding: 16px !important;
+}
+
+
+[data-testid="stAlert"] p {
+    font-size: 14px !important;
+}
+
+
+/* ============================================================
+   STREAMLIT SIDEBAR
+   ============================================================ */
+
+[data-testid="stSidebar"] {
+    background: var(--st-surface) !important;
+
+    border-right: 1px solid var(--st-border) !important;
+}
+
+
+[data-testid="stSidebar"] > div:first-child {
+    padding: 32px 20px !important;
+}
+
+
+[data-testid="stSidebar"] h1 {
+    font-size: 28px !important;
+}
+
+
+[data-testid="stSidebar"] h2 {
+    font-size: 22px !important;
+}
+
+
+[data-testid="stSidebar"] h3 {
+    font-size: 18px !important;
+}
+
+
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] label {
+    font-size: 14px !important;
+}
+
+
+/* ============================================================
+   STREAMLIT CHAT
+   ============================================================ */
+
+[data-testid="stChatMessage"] {
+    padding: 16px !important;
+
+    border-radius: var(--st-radius) !important;
+}
+
+
+[data-testid="stChatInput"] {
+    background: var(--st-surface) !important;
+
+    border: 1px solid var(--st-border) !important;
+
+    border-radius: var(--st-radius) !important;
+}
+
+
+[data-testid="stChatInput"] textarea {
+    font-size: 15px !important;
+}
+
+
+/* ============================================================
+   STREAMLIT PROGRESS
+   ============================================================ */
+
+[data-testid="stProgress"] {
+    margin-top: 8px !important;
+
+    margin-bottom: 8px !important;
+}
+
+
+/* ============================================================
+   STREAMLIT SPINNER
+   ============================================================ */
+
+[data-testid="stSpinner"] {
+    font-size: 14px !important;
+}
+
+
+/* ============================================================
+   STREAMLIT CODE
+   ============================================================ */
+
+[data-testid="stCodeBlock"] {
+    border-radius: var(--st-radius) !important;
+
+    border: 1px solid var(--st-border) !important;
+
+    overflow: hidden !important;
+}
+
+
+/* ============================================================
+   DIVIDER
+   ============================================================ */
+
+[data-testid="stDivider"] {
+    margin-top: 24px !important;
+
+    margin-bottom: 24px !important;
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .block-container {
+        padding-top: 32px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .stApp h1 {
+        font-size: 34px !important;
+    }
+
+    .stApp h2 {
+        font-size: 28px !important;
+    }
+
+    .stApp h3 {
+        font-size: 22px !important;
+    }
+
+    [data-testid="stHorizontalBlock"] {
+        gap: 12px !important;
+    }
+}
+
+
+/* ============================================================
+   HIDE DEFAULT STREAMLIT UI
+   ============================================================ */
+
+#MainMenu {
+    visibility: hidden !important;
+}
+
+footer {
+    visibility: hidden !important;
+}
+
+.stDeployButton {
+    display: none !important;
+}
