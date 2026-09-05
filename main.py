@@ -3,8 +3,11 @@ from services.auth.login_wall import render_login
 from services.state.session_defaults import initial_session_defaults
 from services.config.workout_config import EXERCISE_OPTIONS
 from services.ui.style_loader import load_styles
+from services.persistence.exercise_repository import init_db
+from streamlit_webrtc import webrtc_streamer,WebRtcMode
 load_styles()
 def main():
+    init_db()
     st.set_page_config(page_icon="💪",page_title="AI real-time GYM Coach",initial_sidebar_state="expanded",layout="centered")
     if not render_login():
         return
@@ -74,6 +77,77 @@ def main():
                     st.metric("Front Knee Angle", f"{st.session_state.front_knee_angle}°")
                     st.metric("Torso Angle", f"{st.session_state.torso_angle}°")
                     st.metric("Balance Status", st.session_state.balance_status)
-        
+    st.title("AI GYM COACH")
+    st.markdown("#### Real-time pose detection with proactive AI voice coaching")
+    if not workout_started:
+        st.html("""
+<style>
+    .workout-container {
+        width: 680px;
+        max-width: 90%;
+        margin: 90px auto 0 auto;
+        padding: 45px 40px;
+        text-align: center;
+
+        background: #171922;
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 20px;
+
+        box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+
+        font-family: Arial, sans-serif;
+    }
+
+    .pointer {
+        font-size: 46px;
+        margin-bottom: 22px;
+    }
+
+    .title {
+        margin: 0;
+        color: white;
+        font-size: 32px;
+        font-weight: 800;
+        letter-spacing: -0.8px;
+    }
+
+    .description {
+        margin-top: 16px;
+        color: #90929d;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .description strong {
+        color: white;
+        font-weight: 600;
+    }
+</style>
+
+<div class="workout-container">
+
+    <div class="pointer">👈</div>
+
+    <h1 class="title">
+        Set your workout plan
+    </h1>
+
+    <p class="description">
+        Choose your exercise sets and reps in the sidebar,
+        <br>
+        then click <strong>Start Workout</strong>
+        to activate the camera and AI coach.
+    </p>
+
+</div>
+""")
+    else:
+        context=webrtc_streamer(key="exercise",mode=WebRtcMode.SENDRECV,video_processor_factory=None,rtc_configuration={
+        "iceServers": [
+            {"urls": ["stun:stun.l.google.com:19302"]}
+        ]
+    },media_stream_constraints={"video":True,"audio":False},async_processing=True)
+    f     
+
 if __name__=="__main__":
     main()
