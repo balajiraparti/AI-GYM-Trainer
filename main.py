@@ -5,6 +5,7 @@ from services.config.workout_config import EXERCISE_OPTIONS
 from services.ui.style_loader import load_styles
 from services.persistence.exercise_repository import init_db
 from streamlit_webrtc import webrtc_streamer,WebRtcMode
+from services.vision.exercise_video_processor import VideoProcessorClass
 load_styles()
 def main():
     init_db()
@@ -142,12 +143,12 @@ def main():
 </div>
 """)
     else:
-        context=webrtc_streamer(key="exercise",mode=WebRtcMode.SENDRECV,video_processor_factory=None,rtc_configuration={
+        context=webrtc_streamer(key="exercise",mode=WebRtcMode.SENDRECV,video_processor_factory=VideoProcessorClass,rtc_configuration={
         "iceServers": [
             {"urls": ["stun:stun.l.google.com:19302"]}
         ]
     },media_stream_constraints={"video":True,"audio":False},async_processing=True)
-    f     
+     
 
 if __name__=="__main__":
     main()
